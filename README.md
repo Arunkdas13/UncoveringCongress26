@@ -8,6 +8,7 @@ Outside money, the ads it bought, and published fact-checks for every 2026 U.S. 
 - **Candidate money** — each nominee's receipts split into individuals, PACs, party, self-funding and transfers (from the FEC all-candidates summary), cash on hand and 48-hour large-contribution notices.
 - **Outside money for and against** each candidate, by week, by medium (TV/streaming, digital, mail, texts, production, field…) and by committee, with every line item linked to its FEC filing image.
 - **Who's paying** — top 40 committees, party lean, offense/defense share.
+- **Receipts** — every PAC check to each nominee's campaign from the FEC committee-to-candidate file, tagged by the sponsoring organization's industry (pharma, tech, utilities and data centers, oil and gas, crypto, finance, unions…), with a claim-check tool: dollars, share of receipts, national rank, and the filing for every check.
 - **Ad fact checks** — hand-curated `data/factchecks.json`: published checks from PolitiFact, FactCheck.org, CNN, Snopes and local newsrooms, with the outlet's own rating and a link.
 - **Methods & checks** — sources, inclusion rules, and the automated reconciliation results for the current build.
 
@@ -28,7 +29,14 @@ data/factchecks.json   curated fact-check list (edit by hand)
 | Independent expenditures (Schedule E), party coordinated spending (Schedule F), nominee identification, dedupe | [sabbadoo32/follow-the-money-2026](https://github.com/sabbadoo32/follow-the-money-2026), which rebuilds from FEC bulk files hourly |
 | Candidate receipts itemized (individuals, PACs, party, self-funding, transfers) | FEC bulk `weball26.zip` (all-candidates summary) and `cn26.zip` (candidate master) |
 | Seat holders and photos | [unitedstates/congress-legislators](https://github.com/unitedstates/congress-legislators), [unitedstates/images](https://github.com/unitedstates/images) |
+| PAC contributions to candidates, with sponsoring organizations | FEC bulk `pas226.zip` and `cm26.zip` |
 | Fact checks | the outlets linked on each item |
+
+## The employer layer (optional, needs a free FEC API key)
+
+`scripts/employers.py` asks the FEC API for every nominee's committees (campaign, leadership PAC, joint fundraisers) and the FEC's own aggregation of their itemized individual donations by donor employer, plus the largest donors to the top 40 outside-spending groups. The page then shows "Employees and executives, by employer" under each candidate and "Funded by …" under each super PAC.
+
+Setup, once: get a key at https://api.data.gov/signup/ (instant, free), then in the repository go to Settings → Secrets and variables → Actions → New repository secret, name `FEC_API_KEY`, paste the key. The workflow passes it to the script. A run makes at most 900 calls (the key allows 1,000 per hour), so the first full pass takes two or three scheduled runs; results are cached in `docs/data/employers_cache.json` and refreshed every three days. Without the secret the step prints a notice and the site shows a "not yet collected" line instead.
 
 ## Verification the build performs
 
