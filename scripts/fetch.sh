@@ -12,4 +12,6 @@ curl -fsSL --retry 3 -o work/legislators-current.json \
 # FEC bulk files (optional: the build runs without them, with a coarser money breakdown)
 curl -fsSL --retry 3 -o work/weball26.zip https://www.fec.gov/files/bulk-downloads/2026/weball26.zip || echo "weball26.zip not fetched"
 curl -fsSL --retry 3 -o work/cn26.zip     https://www.fec.gov/files/bulk-downloads/2026/cn26.zip     || echo "cn26.zip not fetched"
+curl -fsSL --retry 3 -o work/pas226.zip https://www.fec.gov/files/bulk-downloads/2026/pas226.zip || echo "pas226.zip not fetched"
+curl -fsSL --retry 3 -o work/cm26.zip     https://www.fec.gov/files/bulk-downloads/2026/cm26.zip     || echo "cm26.zip not fetched"
 ls -la work

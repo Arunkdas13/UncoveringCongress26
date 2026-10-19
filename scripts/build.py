@@ -191,7 +191,9 @@ def fmt_name(n):
     if ',' not in n: return n.title() if n.isupper() else n
     last, rest = n.split(',', 1)
     rest = re.sub(r'\b(JR\.?|SR\.?|II|III|IV|MR\.?|MRS\.?|MS\.?|DR\.?|HON\.?|M\.C\.)\b', '', rest.strip()).strip()
-    parts = rest.split(); first = parts[0] if parts else ''
+    parts = rest.split()
+    if len(parts) > 1 and re.fullmatch(r'[A-Z]\.?', parts[0]): parts = parts[1:]
+    first = parts[0] if parts else ''
     def cap(w):
         w = w.lower(); w = '-'.join(p.capitalize() for p in w.split('-')); w = "'".join(p.capitalize() for p in w.split("'"))
         if w.startswith('Mc') and len(w) > 2: w = 'Mc' + w[2:].capitalize()
