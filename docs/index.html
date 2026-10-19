@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Follow the Ads 2026</title>
-<meta name="description" content="Outside money, the ads it bought and published fact-checks for every 2026 U.S. House and Senate race, built from FEC filings. Built by Arun Das.">
+<meta name="description" content="Enter your ZIP to see every outside dollar and every ad in your 2026 House and Senate races, who paid, which companies paid the candidates, and published fact-checks, all traced to FEC filings. Built by Arun Das.">
 <meta name="author" content="Arun Das">
 <meta property="og:title" content="Follow the Ads 2026">
-<meta property="og:description" content="Who is paying for the ads in every competitive congressional race, with every dollar traced to its FEC filing.">
+<meta property="og:description" content="What's being spent on your ballot: every ad, every dollar, every filing, for all 2026 congressional races.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -51,7 +51,7 @@ h1,h2,h3,h4{margin:0;text-wrap:balance;line-height:1.15}
 .brand .mark{width:26px;height:26px;border-radius:4px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:12px;font-weight:800}
 .brand small{font-weight:500;color:var(--ink-3);font-size:12px;margin-left:2px}
 nav.main{display:flex;gap:2px;margin-left:auto}
-nav.main a{padding:8px 11px;border-radius:4px;color:var(--ink-2);font-weight:500;font-size:14px}
+nav.main a{padding:8px 10px;border-radius:4px;color:var(--ink-2);font-weight:500;font-size:14px;white-space:nowrap}
 nav.main a:hover{background:var(--bg-2);text-decoration:none;color:var(--ink)}
 nav.main a[aria-current="page"]{color:var(--ink);font-weight:700;box-shadow:inset 0 -2px 0 var(--ink)}
 .search{position:relative;flex:0 1 260px;min-width:0}
@@ -235,6 +235,40 @@ table.items .so.S{color:var(--ok);font-weight:700} table.items .so.O{color:var(-
 .prose code{font:13px ui-monospace,Menlo,Consolas,monospace;background:var(--bg-2);padding:1px 5px;border-radius:3px}
 footer{padding-block:28px 40px;color:var(--ink-3);font-size:13px}
 footer a{color:var(--ink-2)}
+.zipbox{margin-top:22px;padding:16px 18px;border:1px solid var(--rule);border-radius:6px;background:var(--bg-2)}
+.zipbox label{display:block;font-size:14px;color:var(--ink-2);margin-bottom:8px}
+.zipbox .row{display:flex;gap:8px;flex-wrap:wrap}
+.zipbox input{height:40px;width:140px;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink);padding:0 12px;font:18px var(--sans);letter-spacing:.06em}
+.zipbox button{height:40px;padding:0 16px;border-radius:4px;background:var(--ink);color:var(--bg);font-weight:700;font-size:14px}
+.zipbox button:hover{opacity:.9}
+.myraces{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media (max-width:700px){.myraces{grid-template-columns:1fr}}
+.myrace{background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;display:grid;gap:8px}
+.myrace h3{font-size:16px}
+.myrace .who{display:flex;align-items:center;gap:8px;font-size:13px;flex-wrap:wrap}
+.myrace .ln{font-size:13px;color:var(--ink-2)}
+.newrow{display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule-2);font-size:14px}
+.newrow .d{color:var(--ink-3);font-size:12px;white-space:nowrap}
+.newrow .n{min-width:0}
+.newrow .n small{display:block;color:var(--ink-3);font-size:12px}
+.newrow .a{font-weight:700;white-space:nowrap}
+@media (max-width:600px){.newrow{grid-template-columns:1fr auto}.newrow .d{grid-column:1/-1}}
+.co-ind{margin-bottom:12px}
+.co-ind .h{display:flex;align-items:baseline;gap:8px;font-size:13px;font-weight:700;margin-bottom:6px}
+.co-ind .h i{display:inline-block;width:10px;height:10px;border-radius:2px}
+.co-ind .h .t{color:var(--ink-3);font-weight:500;margin-left:auto;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.co{display:inline-flex;align-items:baseline;gap:6px;padding:4px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--bg);font-size:13px;cursor:pointer;transition:background .12s}
+.co:hover{background:var(--bg-2)}
+.co b{font-weight:600;color:var(--ink)}
+.co .v{color:var(--ink-3);font-size:12px}
+.co.open{background:var(--bg-3);border-color:var(--ink-3)}
+.co-detail{margin:8px 0 4px;padding:8px 12px;border-left:3px solid var(--rule);font-size:13px;display:grid;gap:4px}
+.co-detail .r{display:grid;grid-template-columns:90px 1fr auto auto;gap:10px;color:var(--ink-2)}
+.co-detail .r b{color:var(--ink)}
+@media (max-width:520px){.co-detail .r{grid-template-columns:80px 1fr auto}}
+details.allchecks summary{cursor:pointer;font-size:13px;color:var(--link);margin:10px 0 6px;list-style:none}
+details.allchecks summary::before{content:'▸ '}details.allchecks[open] summary::before{content:'▾ '}
 .skel{height:14px;background:linear-gradient(90deg,var(--bg-2),var(--bg-3),var(--bg-2));background-size:200% 100%;animation:sh 1.2s infinite;border-radius:3px}
 @keyframes sh{to{background-position:-200% 0}}
 .loading{padding:60px 0;text-align:center;color:var(--ink-3)}
@@ -262,11 +296,10 @@ footer a{color:var(--ink-2)}
     <button class="menu-btn" id="menu" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <nav class="main" id="nav">
       <a href="#overview">Overview</a>
-      <a href="#senate">Senate</a>
-      <a href="#house">House</a>
-      <a href="#spenders">Who's paying</a>
-      <a href="#factchecks">Ad fact checks</a>
-      <a href="#methods">Methods &amp; checks</a>
+      <a href="#latest">Latest</a>
+      <a href="#races">Races</a>
+      <a href="#factchecks">Fact checks</a>
+      <a href="#receipts">Who paid them</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -282,6 +315,10 @@ footer a{color:var(--ink-2)}
       <p class="dek">Every super PAC, party and interest-group dollar reported to the Federal Election Commission for or against a 2026 House or Senate candidate, re-added from the original filings, sorted by race, matched to the ads it bought, and set beside what independent fact-checkers found when they looked at those ads.</p>
       <div class="asof" id="asof"></div>
       <div class="stats" id="stats"></div>
+      <div class="zipbox">
+        <form id="zipform" autocomplete="off"><label for="zip"><b>What's being spent on your ballot?</b> Enter your ZIP code</label><div class="row"><input id="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="10504" aria-label="ZIP code"><button type="submit">Show my races</button></div></form>
+        <div id="zipout"></div>
+      </div>
     </div>
     <div class="wrap block">
       <div class="grid2">
@@ -312,14 +349,34 @@ footer a{color:var(--ink-2)}
 
   <section class="view" id="view-race"></section>
 
-  <section class="view" id="view-spenders">
+  <section class="view" id="view-latest">
     <div class="wrap hero">
-      <div class="kicker">The spenders</div>
-      <h1>The groups behind the ads</h1>
-      <p class="dek">Forty committees account for most of the outside money in 2026. Super PACs can raise unlimited sums; party committees are the national campaign arms; "other" covers traditional PACs, unions, trade associations and nonprofits that report their spending.</p>
+      <div class="kicker">Latest filings</div>
+      <h1>What was filed this week</h1>
+      <p class="dek" id="latest-dek">Independent expenditures reported to the FEC in the last seven days of data, biggest first. Inside 20 days of the election, groups must report within 24 hours of an ad going out, so this is close to a live feed of the air war.</p>
+      <div class="stats" id="latest-stats"></div>
     </div>
-    <div class="wrap block" id="spenders"></div>
+    <div class="wrap block">
+      <div class="grid2">
+        <div>
+          <h2>Biggest new filings</h2>
+          <p class="sub">Each row is one reported expenditure. Click the race for the full picture, or the filing to see the document.</p>
+          <div class="filters"><div class="seg" id="latest-win"><button data-days="2">48 hours</button><button data-days="7" class="on">7 days</button><button data-days="14">14 days</button></div><label style="font-size:14px;display:flex;align-items:center;gap:6px"><input type="checkbox" id="latest-ads" checked> Ads, mail, texts and production only</label></div>
+          <div id="latest-list"></div>
+        </div>
+        <div>
+          <h2>Where the new money went</h2>
+          <p class="sub">Races ranked by outside money filed in the window.</p>
+          <div class="card"><div class="bd" id="latest-races"></div></div>
+          <h2 style="margin-top:26px">Who filed it</h2>
+          <p class="sub">Groups ranked by what they reported in the window.</p>
+          <div class="card"><div class="bd" id="latest-groups"></div></div>
+        </div>
+      </div>
+    </div>
   </section>
+
+
 
   <section class="view" id="view-factchecks">
     <div class="wrap hero">
@@ -330,21 +387,47 @@ footer a{color:var(--ink-2)}
     <div class="wrap block" id="factchecks"></div>
   </section>
 
-  <section class="view" id="view-methods">
+  <section class="view" id="view-receipts">
     <div class="wrap hero">
-      <div class="kicker">Methods and verification</div>
-      <h1>Where the numbers come from, and how they were checked</h1>
+      <div class="kicker">Part 1 · Companies and groups that paid the campaigns</div>
+      <h1>Who paid them</h1>
+      <p class="dek">Candidates accuse each other of being owned by pharma, tech, oil, Wall Street or the data-center industry. The FEC has the receipts. A company cannot give to a federal candidate from its treasury; it gives through its corporate PAC, funded by its executives and directed by the company. Those checks name the company. Pick a candidate to see which companies and groups paid their campaign, by industry, with the filing behind every dollar.</p>
+    </div>
+    <div class="wrap block">
+      <h2>Claim check</h2>
+      <p class="sub">Pick a candidate and an industry. The answer is three numbers and a list of checks, not an adjective.</p>
+      <div class="filters" style="margin-bottom:18px"><select id="cc-cand" aria-label="Candidate" style="min-width:260px"></select><select id="cc-ind" aria-label="Industry"></select></div>
+      <div id="cc-out"></div>
     </div>
     <div class="wrap block">
       <div class="grid2">
-        <div class="prose" id="methods-prose"></div>
         <div>
-          <div class="card"><div class="hd"><h3>Automated checks on this build</h3></div><div class="bd checks" id="global-checks"></div></div>
-          <div class="card" style="margin-top:16px"><div class="hd"><h3>Glossary</h3></div><div class="bd" id="glossary"></div></div>
+          <h2>Where PAC money comes from, nationally</h2>
+          <p class="sub">All contributions from PACs and committees to 2026 House and Senate candidates, by the industry of the sponsoring organization.</p>
+          <div class="card"><div class="bd hbars" id="rc-industries"></div></div>
+        </div>
+        <div>
+          <h2>Biggest recipients by industry</h2>
+          <p class="sub">Top candidates for the industry chosen below, across every 2026 candidate with a filing, not just the races on this site.</p>
+          <div class="filters"><select id="lb-ind" aria-label="Industry for leaderboard"></select></div>
+          <div class="card"><div class="bd" id="rc-leaders"></div></div>
         </div>
       </div>
     </div>
+    <div class="wrap block">
+      <h2>How the tagging works</h2>
+      <div class="prose" id="rc-method"></div>
+    </div>
+  
+<div class="wrap hero" style="border-top:1px solid var(--rule)">
+      <div class="kicker">Part 2 · Outside groups</div>
+      <h1 style="font-size:clamp(24px,3.4vw,34px)">The outside groups behind the ads</h1>
+      <p class="dek">Forty committees account for most of the outside money in 2026. Super PACs can raise unlimited sums; party committees are the national campaign arms; "other" covers traditional PACs, unions, trade associations and nonprofits that report their spending.</p>
+    </div>
+    <div class="wrap block" id="spenders"></div>
   </section>
+
+
 
   <section class="view" id="view-about">
     <div class="wrap hero">
@@ -379,6 +462,20 @@ footer a{color:var(--ink-2)}
             <div><b style="color:var(--ink)">Member photos and seat data</b><br><a href="https://github.com/unitedstates/images" target="_blank" rel="noopener">unitedstates/images</a> and <a href="https://github.com/unitedstates/congress-legislators" target="_blank" rel="noopener">congress-legislators</a></div>
             <div><b style="color:var(--ink)">Fact checks</b><br>PolitiFact, FactCheck.org, CNN, Snopes and the local newsrooms linked on each item</div>
           </div></div>
+        </div>
+      </div>
+    </div>
+  
+<div class="wrap hero" id="methods-anchor" style="border-top:1px solid var(--rule)">
+      <div class="kicker">Methods and verification</div>
+      <h1 style="font-size:clamp(24px,3.4vw,34px)">Where the numbers come from, and how they were checked</h1>
+    </div>
+    <div class="wrap block">
+      <div class="grid2">
+        <div class="prose" id="methods-prose"></div>
+        <div>
+          <div class="card"><div class="hd"><h3>Automated checks on this build</h3></div><div class="bd checks" id="global-checks"></div></div>
+          <div class="card" style="margin-top:16px"><div class="hd"><h3>Glossary</h3></div><div class="bd" id="glossary"></div></div>
         </div>
       </div>
     </div>
@@ -433,7 +530,7 @@ Promise.all([fetch('data/races.json').then(r=>r.json()),fetch('data/items.json')
   ITEMS.C=C;
   it.items.forEach(row=>{const rid=D.races[row[C.race]].id;(itemsByRace[rid]||(itemsByRace[rid]=[])).push(row)});
   $('#loading').hidden=true;
-  buildOverview(); buildSpenders(); buildFactchecks(); buildMethods();
+  buildOverview(); buildSpenders(); buildFactchecks(); buildMethods(); buildLatest();
   route();
 }).catch(e=>{$('#loading').textContent='The data files did not load. Reload the page to try again.';console.error(e)});
 
@@ -543,7 +640,7 @@ function buildRace(r){
   raceState={adsOnly:true,so:'all',cand:'',q:'',page:0};
   const d=nominee(r,'DEM'),p=nominee(r,'REP');const S=r.sides;
   const others=r.cands.filter(c=>!c.nominee);
-  let h=`<div class="wrap race-hd"><div class="crumb"><a href="#overview">All races</a> › <a href="#${r.office==='S'?'senate':'house'}">${r.office==='S'?'Senate':'House'}</a> › ${esc(r.label)}</div>
+  let h=`<div class="wrap race-hd"><div class="crumb"><a href="#overview">All races</a> › <a href="#races">Races</a> › ${esc(r.label)}</div>
   <div class="kicker">${r.office==='S'?'U.S. Senate':'U.S. House'} · ${esc(STATES[r.state])}</div>
   <h1 class="race-title">${esc(r.label)}</h1>
   <div class="race-meta">${holderFace(r)}<span>Seat held by <b>${esc(r.holder||'—')}</b> <span class="chip ${r.holder_party==='DEM'?'dem':'rep'}">${r.holder_party}</span>${r.open?' · <b>open seat</b>':''}${r.holder_uncertain?` · <span class="term" data-tip="${esc(r.uncertain_reason||'Redistricting moved the member; seat holder is uncertain')}">holder uncertain</span>`:''}</span>
@@ -556,7 +653,9 @@ function buildRace(r){
   // candidate money
   h+=`<div class="wrap block"><h2>The candidates’ own money</h2><p class="sub">What each nominee’s principal campaign committee reported raising this cycle, from the FEC’s all-candidates summary file. ${D.meta.itemized?`${term('individual contributions','Individual')}, PAC, party, self-funding and transfer lines are itemized; the small remainder is refunds and offsets.`:`The summary itemizes ${term('individual contributions')} and party money; everything else, including PAC contributions and self-funding, sits in ${term('other sources')} until you open the full FEC report linked under each name.`}</p><div class="tally">${[d,p].map(c=>candMoney(c)).join('')}</div></div>`;
   // outside money
-  h+=`<div class="wrap block"><h2>Outside money for and against each candidate</h2><p class="sub">${term('independent expenditure','Independent expenditures')} and party ${term('coordinated','coordinated spending')} reported to the FEC with this candidate named. "For" means the filing says the spending supports the candidate; "against" means it opposes them. Groups are linked to their FEC pages.</p><div class="tally">${[d,p].map(c=>candOutside(c,r)).join('')}</div></div>`;
+  h+=`<div class="wrap block"><h2>Outside money for and against each candidate</h2><p class="sub">${term('independent expenditure','Independent expenditures')} and party ${term('coordinated','coordinated spending')} reported to the FEC with this candidate named. "For" means the filing says the spending supports the candidate; "against" means it opposes them. Groups are linked to their FEC pages.</p><div class="tally" id="outside-cards">${[d,p].map(c=>candOutside(c,r)).join('')}</div></div>`;
+  // PAC receipts
+  h+=`<div class="wrap block" id="race-receipts"><h2>Who paid the candidates</h2><p class="sub">The companies, unions and groups whose PACs wrote checks to each nominee\u2019s campaign, grouped by industry. A company can only give to a federal candidate through its corporate PAC, so these are the companies. Click a name to see the checks and the FEC filings; ranks compare against every 2026 House and Senate candidate who took money from that industry.</p><div class="tally" id="rc-race"><div class="card"><div class="bd" style="color:var(--ink-3)">Loading PAC receipts…</div></div></div></div>`;
   // fact checks
   h+=`<div class="wrap block"><h2>Fact checks of ads in this race</h2>${r.fc.length?`<p class="sub">${r.fc.length} published check${r.fc.length>1?'s':''} of ads aired in this race. Ratings are the outlets’ own; click through for the full analysis.</p><div class="fc">${r.fc.map(fcItem).join('')}</div>`:`<p class="sub">No published fact-check of a specific ad in this race was found in the national and local outlets surveyed as of the build date. The purpose fields and payees in the line items below still show which vendors placed the ads.</p>`}</div>`;
   // line items
@@ -568,6 +667,129 @@ function buildRace(r){
   <div class="check info"><div class="ic">i</div><div>What is not verified<small>Whether an ad’s content matches its reported purpose, and the final cost of items filed as estimates. Fact-check ratings are the outlets’ judgments, linked, not re-adjudicated here.</small></div></div></div></div>`;
   const v=$('#view-race');v.innerHTML=h;
   renderItemFilters(r);renderItems(r);
+  loadReceipts().then(R=>{const el=$('#rc-race');if(!el||!R)return;el.innerHTML=[d,p].map(c=>candReceipts(c,R)).join('');if(EMP&&EMP.superpacs){const oc=$('#outside-cards');if(oc)oc.innerHTML=[d,p].map(c=>candOutside(c,r)).join('')}});
+}
+
+// ---------- ZIP lookup
+let ZIPS=null;
+function raceCard(r,label){
+  if(!r)return `<div class="myrace"><h3>${esc(label)}</h3><div class="ln" style="color:var(--ink-3)">No outside spending reported in this race yet. That usually means neither party's groups consider it competitive.</div></div>`;
+  const d=nominee(r,'DEM'),p=nominee(r,'REP');
+  return `<div class="myrace"><h3><a href="#${r.id}">${esc(r.label)}</a> <span style="font-weight:500;color:var(--ink-3);font-size:13px">· ${r.open?'open seat':'held by '+esc(r.holder||'')}</span></h3>
+  <div class="who">${d?face(d)+' <b>'+esc(d.name)+'</b>':''}${d&&p?'<span class="vs">vs</span>':''}${p?face(p)+' <b>'+esc(p.name)+'</b>':''}</div>
+  ${pbar(r.sides.DEM.total,r.sides.REP.total,8)}<div class="ln num"><span style="color:var(--dem)">${fmt(r.sides.DEM.total)} pro-Dem</span> · <span style="color:var(--rep)">${fmt(r.sides.REP.total)} pro-Rep</span> · <b>${fmt(r.total)}</b> total, ${fmt(r.last_7d)} in the last 7 days${r.fc.length?` · ${r.fc.length} ad fact check${r.fc.length>1?'s':''}`:''}</div>
+  <div><a href="#${r.id}" style="font-weight:600">See every ad and every dollar →</a></div></div>`}
+$('#zipform').addEventListener('submit',e=>{e.preventDefault();const z=$('#zip').value.trim();const out=$('#zipout');if(!/^\d{5}$/.test(z)){out.innerHTML='<p class="sub" style="margin:10px 0 0;font-size:14px">Enter a five-digit ZIP code.</p>';return}
+  out.innerHTML='<p class="sub" style="margin:10px 0 0;font-size:14px">Looking up your districts…</p>';
+  (ZIPS?Promise.resolve(ZIPS):fetch('data/zips.json').then(r=>r.json()).then(j=>ZIPS=j)).then(Z=>{const v=Z[z];if(!v){out.innerHTML='<p class="sub" style="margin:10px 0 0;font-size:14px">That ZIP code isn’t in the district map. Try a neighboring ZIP, or search your state above.</p>';return}
+    const dists=v.split('|');const st=dists[0].slice(0,2);
+    const house=dists.map(d=>{const [s,cd]=d.split('-');const id=`H-${s}-${cd}`;return raceCard(byRace[id],`${STATES[s]} ${cd==='00'?'at-large':ordinal(+cd)} District`)});
+    const sen=byRace[`S-${st}`];
+    out.innerHTML=`<div class="myraces">${house.join('')}${sen?raceCard(sen):`<div class="myrace"><h3>${esc(STATES[st])} Senate</h3><div class="ln" style="color:var(--ink-3)">${['AK','AL','AR','CO','DE','FL','GA','IA','ID','IL','KS','KY','LA','MA','ME','MI','MN','MS','MT','NC','NE','NH','NJ','NM','OH','OK','OR','RI','SC','SD','TN','TX','VA','WV','WY'].includes(st)?'No outside spending reported in this Senate race yet.':'No Senate seat is on the ballot in this state in 2026.'}</div></div>`}</div>${dists.length>1?`<p class="sub" style="margin:10px 0 0;font-size:13px">This ZIP code straddles ${dists.length} House districts, so all of them are shown.</p>`:''}`;
+    try{localStorage.setItem('fta-zip',z)}catch(e){}
+  }).catch(()=>{out.innerHTML='<p class="sub" style="margin:10px 0 0;font-size:14px">The district map didn’t load. Reload and try again.</p>'})});
+try{const z=localStorage.getItem('fta-zip');if(z){$('#zip').value=z}}catch(e){}
+
+// ---------- latest filings
+let latestState={days:7,ads:true};
+function buildLatest(){
+  const C=ITEMS.C;const filed=ITEMS.items.map(x=>x[C.filed]).filter(Boolean).sort();const maxDate=filed[filed.length-1];
+  const cutoff=d=>{const t=new Date(maxDate+'T00:00:00Z');t.setUTCDate(t.getUTCDate()-d);return t.toISOString().slice(0,10)};
+  $('#latest-dek').insertAdjacentHTML('beforeend',` Most recent filing in this build: <b>${esc(maxDate)}</b>.`);
+  const render=()=>{const since=cutoff(latestState.days);const rows=ITEMS.items.filter(x=>x[C.filed]&&x[C.filed]>since&&(!latestState.ads||AD_MEDIA.has(x[C.medium])));
+    const total=rows.reduce((s,x)=>s+x[C.amount],0);const dem=rows.filter(x=>x[C.helps]==='DEM').reduce((s,x)=>s+x[C.amount],0);
+    $('#latest-stats').innerHTML=`<div class="stat"><div class="v num">${fmt(total)}</div><div class="l">filed since ${esc(since)}</div></div><div class="stat"><div class="v num">${fmtInt(rows.length)}</div><div class="l">expenditures reported</div></div><div class="stat"><div class="v num" style="color:var(--dem)">${fmt(dem)}</div><div class="l">helping Democrats</div></div><div class="stat"><div class="v num" style="color:var(--rep)">${fmt(total-dem)}</div><div class="l">helping Republicans</div></div>`;
+    const big=rows.slice().sort((a,b)=>b[C.amount]-a[C.amount]).slice(0,60);
+    $('#latest-list').innerHTML=big.map(x=>{const r=D.races[x[C.race]];const c=r.cands.find(c=>c.id===x[C.cand]);const est=/ESTIMAT/i.test(ITEMS.purposes[x[C.purpose]]);
+      return `<div class="newrow"><div class="d">filed ${esc(x[C.filed])}<br>aired ${esc(x[C.date]||'—')}</div><div class="n"><a href="#${r.id}"><b>${esc(r.label)}</b></a> · <span class="so ${x[C.so]}" style="color:${x[C.so]==='S'?'var(--ok)':'var(--bad)'};font-weight:700">${x[C.so]==='S'?'FOR':'AGAINST'}</span> ${c?esc(c.name):''} ${c?`<span class="chip ${c.party==='DEM'?'dem':'rep'}">${c.party[0]}</span>`:''}<small><a href="${fecCmte(x[C.cmte])}" target="_blank" rel="noopener">${esc(ITEMS.cmte_names[x[C.cmte_name]])}</a> · <span class="med">${MEDIUM_LABEL[x[C.medium]]}</span> ${esc(ITEMS.purposes[x[C.purpose]])}${est?' <span class="chip warn">estimate</span>':''} · ${x[C.image]?`<a href="${fecImg(x[C.image])}" target="_blank" rel="noopener">filing</a>`:''}</small></div><div class="a num">${fmt(x[C.amount])}</div></div>`}).join('')||'<p class="sub">Nothing filed in this window.</p>';
+    const byR={};rows.forEach(x=>{byR[x[C.race]]=(byR[x[C.race]]||0)+x[C.amount]});const rr=Object.entries(byR).sort((a,b)=>b[1]-a[1]).slice(0,15);const mx=rr.length?rr[0][1]:1;
+    $('#latest-races').innerHTML=`<div class="hbars">${rr.map(([i,v])=>{const r=D.races[i];return `<div class="hbar"><div class="n"><a href="#${r.id}" style="color:var(--ink)">${esc(shortLabel(r))}</a></div><div class="t"><i style="width:${v/mx*100}%;background:var(--ink-2)"></i></div><div class="v num">${fmt(v)}</div></div>`}).join('')}</div>`;
+    const byG={};rows.forEach(x=>{const k=x[C.cmte];byG[k]=byG[k]||{DEM:0,REP:0};byG[k][x[C.helps]]+=x[C.amount]});const gg=Object.entries(byG).sort((a,b)=>(b[1].DEM+b[1].REP)-(a[1].DEM+a[1].REP)).slice(0,15);
+    $('#latest-groups').innerHTML=`<div class="cm-list">${gg.map(([k,v])=>`<div class="cm"><div class="n"><a href="${fecCmte(k)}" target="_blank" rel="noopener">${esc((D.committees[k]||{}).name||k)}</a> <span class="chip ${v.DEM>v.REP?'dem':'rep'}">${v.DEM>v.REP?'pro-Dem':'pro-Rep'}</span></div><div class="a num">${fmt(v.DEM+v.REP)}</div></div>`).join('')}</div>`};
+  $$('#latest-win button').forEach(b=>b.onclick=()=>{latestState.days=+b.dataset.days;$$('#latest-win button').forEach(x=>x.classList.toggle('on',x===b));render()});
+  $('#latest-ads').onchange=e=>{latestState.ads=e.target.checked;render()};
+  render();
+}
+
+// ---------- PAC receipts (lazy-loaded data/receipts.json)
+let RC=null,RCp=null,EMP=null;
+function loadReceipts(){if(RC)return Promise.resolve(RC);if(!RCp)RCp=Promise.all([fetch('data/receipts.json').then(r=>r.ok?r.json():null).catch(()=>null),fetch('data/employers.json').then(r=>r.ok?r.json():null).catch(()=>null)]).then(([j,e])=>{RC=j;EMP=e;return j});return RCp}
+const IND_ORDER=['pharma','tech','power','oilgas','crypto','finance','insurers','doctors','defense','israel','telecom','transport','agri','realestate','manufacturing','business','guns','vice','lawyers','labor','ideology','leadership','candidates','party','other_corp','other_trade','other_member','other'];
+const IND_COLOR={pharma:'#7b4ea3',tech:'#2a62b8',power:'#b26a00',oilgas:'#6b4b2a',crypto:'#c08a00',finance:'#1f8a4c',insurers:'#8a2f6b',doctors:'#3d8f8f',defense:'#4b5159',israel:'#2f6fb0',labor:'#c43b35',ideology:'#7a818b',leadership:'#9aa0a8'};
+function indColor(k){return IND_COLOR[k]||'var(--ink-3)'}
+function receiptsTable(items,R,limit){
+  if(!items.length)return '<div style="color:var(--ink-3);font-size:13px">No PAC contributions on file.</div>';
+  const rows=items.slice(0,limit||items.length).map(it=>{const cm=R.committees[it[0]]||{};return `<tr><td class="num" style="white-space:nowrap">${esc(it[2]||'')}</td><td><a href="${fecCmte(it[0])}" target="_blank" rel="noopener">${esc(cm.name||it[0])}</a>${cm.conn&&cm.conn!=='NONE'?`<br><small style="color:var(--ink-3)">${esc(cm.conn)}</small>`:''}</td><td><span class="med" style="border-left:3px solid ${indColor(it[5])}">${esc(R.meta.labels[it[5]]||it[5])}</span></td><td class="num"><b>${fmtFull(it[1])}</b></td><td style="white-space:nowrap">${it[3]?`<a href="${fecImg(it[3])}" target="_blank" rel="noopener">View filing</a>`:'—'}</td></tr>`}).join('');
+  return `<div class="table-wrap"><table class="items" style="min-width:620px"><thead><tr><th>Date</th><th>PAC · sponsoring organization</th><th>Industry</th><th class="num">Amount</th><th>Filing</th></tr></thead><tbody>${rows}</tbody>${limit&&items.length>limit?`<tfoot><tr><td colspan="5" style="color:var(--ink-3)">Showing the ${limit} largest of ${fmtInt(items.length)} checks; the full list is on the Receipts tab.</td></tr></tfoot>`:''}</table></div>`}
+const CO_STRIP=/\b(INC|INCORPORATED|LLC|L\.L\.C|CORP|CORPORATION|CO|COMPANY|COMPANIES|LTD|LIMITED|L\.P|LP|PLC|HOLDINGS|GROUP|AMERICA(?!'S)|AMERICAS|USA|U\.S\.A|THE|OF AMERICA|N\.A|NA|AND SUBSIDIARIES|ITS SUBSIDIARIES|SUBSIDIARIES|AFFILIATES|EMPLOYEES|EMPLOYEE|POLITICAL ACTION COMMITTEE|POLITICAL ACTION FUND|POLITICAL FUND|PAC|FEDERAL|SEPARATE SEGREGATED FUND|GOOD GOVERNMENT FUND|COMMITTEE)\b\.?/g;
+const CO_KEEP={'AT&T':1,'UBS':1,'PG&E':1,'NRECA':1,'AIPAC':1,'IBM':1,'HCA':1,'AIG':1,'NRSC':1,'DCCC':1,'NRCC':1,'DSCC':1,'SEIU':1,'IBEW':1,'UAW':1,'AFSCME':1,'AFL-CIO':1,'NEA':1,'AFT':1,'UFCW':1,'CVS':1,'GSK':1,'BNSF':1,'CSX':1,'UPS':1,'KKR':1,'KPMG':1,'PNC':1,'USAA':1,'NRA':1,'LCV':1,'ADM':1,'DTE':1,'AEP':1,'PPL':1,'NRG':1,'CRH':1,'HDR':1,'SAIC':1,'RTX':1,'L3HARRIS':1,'3M':1,'DRIVE':1,'NAB':1,'NCTA':1,'CTIA':1,'AHIP':1,'PHRMA':1};
+function coName(cm){let n=(cm.conn&&cm.conn!=='NONE'?cm.conn:cm.name)||'';n=n.replace(/\(.*?\)/g,' ').replace(/\bD\/B\/A\b.*$/i,'').replace(CO_STRIP,' ').replace(/[,.&]+\s*$/,'').replace(/\s{2,}/g,' ').replace(/^[\s,.-]+|[\s,.-]+$/g,'').trim();
+  n=n.replace(/\s[A-Z]$/,'');if(!n)n=cm.name||'';n=n.split(' ').map(w=>CO_KEEP[w]||/^[A-Z]&[A-Z]$/.test(w)?w:(w.length<=3&&/^[A-Z]+$/.test(w)&&!/^(OF|THE|AND|FOR)$/.test(w))?w:w.charAt(0)+w.slice(1).toLowerCase()).join(' ').replace(/\bOf\b/g,'of').replace(/\bAnd\b/g,'and').replace(/\bFor\b/g,'for').replace(/\bThe\b/g,'the').replace(/\bMc(\w)/g,(m,c)=>'Mc'+c.toUpperCase());
+  return n.length>44?n.slice(0,42)+'…':n}
+function companies(rc,R){const by={};rc.items.forEach(it=>{const cm=R.committees[it[0]]||{name:it[0],conn:''};const key=(cm.conn&&cm.conn!=='NONE'?cm.conn:cm.name).toUpperCase();const o=by[key]||(by[key]={name:coName(cm),ind:it[5],total:0,items:[],cmte:it[0]});o.total+=it[1];o.items.push(it)});
+  const byInd={};Object.values(by).forEach(co=>{(byInd[co.ind]||(byInd[co.ind]=[])).push(co)});
+  return Object.entries(byInd).map(([k,list])=>({k,label:R.meta.labels[k]||k,total:list.reduce((s,c)=>s+c.total,0),list:list.sort((a,b)=>b.total-a.total)})).sort((a,b)=>b.total-a.total)}
+function companyChips(rc,R,max,maxGroups){const groups=companies(rc,R);const head=maxGroups?groups.slice(0,maxGroups):groups,tail=maxGroups?groups.slice(maxGroups):[];const one=g=>{const vis=max?g.list.slice(0,max):g.list;const more=g.list.length-vis.length;
+    return `<div class="co-ind"><div class="h"><i style="background:${indColor(g.k)}"></i>${esc(g.label)}<span class="t num">${fmt(g.total)} · ${g.list.length} ${g.list.length===1?'payer':'payers'}${rc.ranks[g.k]?` · #${rc.ranks[g.k]} nationally`:''}</span></div><div class="chips">${vis.map(co=>`<span class="co" data-co="${esc(co.cmte)}" tabindex="0"><b>${esc(co.name)}</b><span class="v num">${fmt(co.total)}</span></span>`).join('')}${more>0?`<span class="co" style="color:var(--ink-3);cursor:default">+${more} more</span>`:''}</div><div class="co-detail" hidden></div></div>`};
+  return head.map(one).join('')+(tail.length?`<details class="allchecks"><summary>${tail.length} more industries (${fmt(tail.reduce((s,g)=>s+g.total,0))})</summary>${tail.map(one).join('')}</details>`:'')}
+function wireChips(root,rc,R){root.addEventListener('click',e=>{const ch=e.target.closest('.co[data-co]');if(!ch)return;const det=ch.closest('.co-ind').querySelector('.co-detail');const open=ch.classList.contains('open');$$('.co.open',root).forEach(x=>x.classList.remove('open'));$$('.co-detail',root).forEach(x=>x.hidden=true);if(open)return;ch.classList.add('open');
+  const all=rc.items.filter(it=>{const cm=R.committees[it[0]]||{};const cm2=R.committees[ch.dataset.co]||{};return (cm.conn&&cm.conn!=='NONE'?cm.conn:cm.name)===(cm2.conn&&cm2.conn!=='NONE'?cm2.conn:cm2.name)});const cm=R.committees[ch.dataset.co]||{};
+  det.innerHTML=`<div style="font-size:12px;color:var(--ink-3)">${esc(cm.name||'')}${cm.conn&&cm.conn!=='NONE'?' · sponsored by '+esc(cm.conn):''} · <a href="${fecCmte(ch.dataset.co)}" target="_blank" rel="noopener">FEC committee page</a></div>${all.sort((a,b)=>(b[2]||'').localeCompare(a[2]||'')).map(it=>`<div class="r"><span class="num">${esc(it[2]||'')}</span><span>${/ESTIMAT/i.test('')?'':''}check to the campaign</span><b class="num">${fmtFull(it[1])}</b>${it[3]?`<a href="${fecImg(it[3])}" target="_blank" rel="noopener">filing</a>`:'<span></span>'}</div>`).join('')}`;det.hidden=false});
+  root.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('co'))e.target.click()})}
+function empName(e){return coName({conn:'',name:e})}
+function employerChips(ec,maxGroups){
+  if(!ec||!ec.employers.length)return '';
+  const L=EMP.meta.labels;const groups={};ec.employers.forEach(x=>{(groups[x.ind]||(groups[x.ind]=[])).push(x)});
+  const ordered=Object.entries(groups).map(([k,list])=>({k,label:L[k]||k,total:list.reduce((s,x)=>s+x.t,0),n:list.reduce((s,x)=>s+x.n,0),list})).sort((a,b)=>b.total-a.total);
+  const one=g=>`<div class="co-ind"><div class="h"><i style="background:${indColor(g.k)}"></i>${esc(g.label)}<span class="t num">${fmt(g.total)} · ${fmtInt(g.n)} donations</span></div><div class="chips">${g.list.slice(0,10).map(x=>`<span class="co" style="cursor:default" data-tip="${esc(x.e)}: ${fmtFull(x.t)} from ${fmtInt(x.n)} itemized donations${x.via.includes('J')?' (includes joint fundraising)':''}"><b>${esc(empName(x.e))}</b><span class="v num">${fmt(x.t)}</span></span>`).join('')}${g.list.length>10?`<span class="co" style="color:var(--ink-3);cursor:default">+${g.list.length-10} more</span>`:''}</div></div>`;
+  const head=ordered.slice(0,maxGroups||6),tail=ordered.slice(maxGroups||6);
+  return head.map(one).join('')+(tail.length?`<details class="allchecks"><summary>${tail.length} more employer groups (${fmt(tail.reduce((s,g)=>s+g.total,0))})</summary>${tail.map(one).join('')}</details>`:'')}
+function coverageNote(hasEmp){return `<div style="font-size:12px;color:var(--ink-3);margin:0 0 12px;padding:8px 10px;background:var(--bg-2);border-radius:4px">Covers the 2025–26 cycle. <b>PAC checks</b> are what companies and groups give directly through their PACs (capped at $5,000 per election). ${hasEmp?'<b>Employees and executives</b> are itemized individual donations (over $200) grouped by the employer the donor reported, across the candidate’s campaign, leadership PAC and joint fundraisers.':'Donations from executives and employees as individuals are a separate layer, not yet collected for this build.'} Money spent <i>for</i> the candidate by super PACs is under "Outside money" above. Earlier cycles, personal income and investments are not campaign finance and are not shown.</div>`}
+function candReceipts(c,R){
+  if(!c)return `<div class="card"><div class="bd" style="color:var(--ink-3)">No nominee identified.</div></div>`;
+  const rc=R.candidates[c.id];
+  if(!rc||!rc.n)return `<div class="card"><div class="hd">${face(c,'mid')}<div><h3>${esc(c.name)}</h3></div></div><div class="bd" style="color:var(--ink-3)">No PAC or committee contributions on file for this candidate’s campaign.</div></div>`;
+  const top=companies(rc,R).flatMap(g=>g.list).sort((a,b)=>b.total-a.total).slice(0,3).map(co=>co.name);
+  const id='rc-'+c.id;
+  setTimeout(()=>{const el=document.getElementById(id);if(el)wireChips(el,rc,R)},0);
+  return `<div class="card" id="${id}"><div class="hd">${face(c,'mid')}<div><h3>${esc(c.name)}</h3><div style="font-size:12px;color:var(--ink-3)">${fmtInt(rc.n)} checks from ${fmtInt(new Set(rc.items.map(it=>{const cm=R.committees[it[0]]||{};return cm.conn&&cm.conn!=='NONE'?cm.conn:cm.name})).size)} companies and groups · <a href="#receipts" onclick="window.__ccPreset='${c.id}'">open in claim check</a></div></div></div><div class="bd">
+  <div class="fa"><div class="box"><div class="v num">${fmt(rc.total)}</div><div class="l">from PACs and committees${rc.share!=null?` · ${(rc.share*100).toFixed(1)}% of receipts`:''}</div></div><div class="box"><div class="v num">#${rc.rank_total}</div><div class="l">of ${fmtInt(rc.n_ranked)} 2026 candidates by PAC money</div></div></div>
+  ${coverageNote(!!(EMP&&EMP.candidates[c.id]))}
+  <div class="kicker" style="margin:0 0 8px">PAC checks to the campaign</div>
+  ${top.length?`<p style="margin:0 0 12px;font-size:14px;color:var(--ink-2)">Biggest payers: <b style="color:var(--ink)">${esc(top.join(', '))}</b>. Click any name for the checks and filings.</p>`:''}
+  ${companyChips(rc,R,8,6)}
+  ${EMP&&EMP.candidates[c.id]?`<div class="kicker" style="margin:18px 0 8px">Employees and executives, by employer</div><p style="margin:0 0 12px;font-size:14px;color:var(--ink-2)">${fmt(EMP.candidates[c.id].itemized_total)} in itemized individual donations across ${EMP.candidates[c.id].committees.length} committee${EMP.candidates[c.id].committees.length>1?'s':''} (${EMP.candidates[c.id].committees.map(x=>esc(x.name)).join(', ')}).</p>${employerChips(EMP.candidates[c.id],6)}`:''}
+  <details class="allchecks"><summary>All ${fmtInt(rc.items.length)} checks as a table</summary>${receiptsTable(rc.items,R)}</details>
+  ${rc.checks.map(x=>`<div class="check ${x.ok?'ok':'bad'}" style="margin-top:10px"><div class="ic">${x.ok?'✓':'!'}</div><div>${esc(x.label)}<small class="num">${esc(x.detail)}</small></div></div>`).join('')}</div></div>`}
+function buildReceipts(){
+  loadReceipts().then(R=>{
+    if(!R){$('#cc-out').innerHTML='<p class="sub">PAC receipts are not available in this build.</p>';return}
+    const L=R.meta.labels;
+    const cands=Object.entries(R.candidates).filter(([id,c])=>c.n>0).sort((a,b)=>a[1].name.localeCompare(b[1].name));
+    $('#cc-cand').innerHTML=cands.map(([id,c])=>`<option value="${id}">${esc(c.name)} (${c.party[0]}) · ${esc(byRace[c.race]?shortLabel(byRace[c.race]):c.race)}</option>`).join('');
+    const indOpts=IND_ORDER.filter(k=>L[k]).map(k=>`<option value="${k}">${esc(L[k])}</option>`).join('');
+    $('#cc-ind').innerHTML='<option value="">All industries</option>'+indOpts;$('#lb-ind').innerHTML=indOpts;
+    if(window.__ccPreset&&R.candidates[window.__ccPreset]){$('#cc-cand').value=window.__ccPreset;window.__ccPreset=null}
+    else{const top=cands.slice().sort((a,b)=>b[1].total-a[1].total)[0];if(top)$('#cc-cand').value=top[0]}
+    const render=()=>{const id=$('#cc-cand').value,k=$('#cc-ind').value,c=R.candidates[id];if(!c)return;const r=byRace[c.race];
+      const items=k?c.items.filter(it=>it[5]===k):c.items;const amt=k?(c.industries[k]||0):c.total;const rank=k?c.ranks[k]:c.rank_total;const nRanked=k?(R.meta.industry_n[k]||0):c.n_ranked;
+      const pct=c.receipts?amt/c.receipts*100:null;
+      $('#cc-out').innerHTML=`<div class="card"><div class="hd"><h3>${esc(c.name)} <span class="chip ${c.party==='DEM'?'dem':'rep'}">${c.party}</span></h3><span class="r">${r?`<a href="#${r.id}">${esc(r.label)}</a> · `:''}<a href="${fecCand(id)}" target="_blank" rel="noopener">FEC profile</a></span></div><div class="bd">
+      <div class="stats" style="margin:0 0 16px"><div class="stat"><div class="v num">${fmt(amt)}</div><div class="l">from ${k?esc(L[k]):'all'} PACs${k?'':' and committees'} · ${fmtInt(items.length)} checks</div></div><div class="stat"><div class="v num">${pct!=null?pct.toFixed(pct<1?2:1)+'%':'—'}</div><div class="l">of the campaign’s total receipts (${c.receipts?fmt(c.receipts):'no summary on file'})</div></div><div class="stat"><div class="v num">${rank?'#'+rank:'—'}</div><div class="l">${rank?`of ${fmtInt(nRanked)} 2026 House and Senate candidates who took ${k?esc(L[k]).toLowerCase():'PAC'} money`:'no money from this industry on file'}</div></div><div class="stat"><div class="v num">${k&&amt?fmt(items[0][1]):'—'}</div><div class="l">${k&&amt?'largest single check':'pick an industry'}</div></div></div>
+      ${k&&c.industries[k]?`<p class="sub" style="font-size:14px">What that means: ${esc(c.name)}’s campaign reported ${fmtFull(amt)} from ${esc(L[k]).toLowerCase()} PACs, ${pct!=null?pct.toFixed(1)+'% of everything it raised':'share unknown'}. ${rank<=10?'That is among the ten largest such totals in the country this cycle.':rank<=50?'That ranks in the top 50 nationally.':'Most of this candidate’s money comes from elsewhere; see the full breakdown on the race page.'} PAC checks are capped at $5,000 per election, so large totals come from many PACs, not one.</p>`:''}
+      <div id="cc-chips">${k?companyChips({items:items,ranks:c.ranks},R,0):companyChips(c,R,12,8)}</div>
+      <details class="allchecks"><summary>All ${fmtInt(items.length)} checks as a table</summary>${receiptsTable(items,R)}</details></div></div>`;wireChips($('#cc-chips'),{items:items,ranks:c.ranks},R)};
+    $('#cc-cand').onchange=render;$('#cc-ind').onchange=render;render();
+    // national industry bars
+    const tot=Object.entries(R.meta.industry_totals).sort((a,b)=>b[1]-a[1]);const mx=tot[0][1];
+    $('#rc-industries').innerHTML=tot.map(([k,v])=>`<div class="hbar"><div class="n" title="${esc(L[k])}">${esc(L[k])}</div><div class="t"><i style="width:${v/mx*100}%;background:${indColor(k)}"></i></div><div class="v num">${fmt(v)}</div></div>`).join('');
+    const lb=()=>{const k=$('#lb-ind').value;const rows=R.leaders[k]||[];$('#rc-leaders').innerHTML=rows.length?`<div class="cm-list">${rows.map((x,i)=>`<div class="cm"><div class="n">${i+1}. ${x.site&&x.race?`<a href="#${x.race}">${esc(x.name)}</a> <span class="chip ${x.party==='DEM'?'dem':'rep'}">${x.party[0]}</span>`:`<a href="${fecCand(x.cand)}" target="_blank" rel="noopener">${esc(x.name)}</a> <span class="chip neu">not in a race on this site</span>`}</div><div class="a num">${fmt(x.amount)}</div></div>`).join('')}</div>`:'<div style="color:var(--ink-3);font-size:13px">No contributions tagged to this industry.</div>'};
+    $('#lb-ind').value='pharma';$('#lb-ind').onchange=lb;lb();
+    const m=R.meta;
+    $('#rc-method').innerHTML=`<p>Source: the FEC bulk file of contributions from committees to candidates (transaction type 24K), ${fmtInt(m.n_contributions)} checks totaling ${fmt(m.total)} to ${fmtInt(m.n_candidates)} House and Senate candidates, joined to the FEC committee master to get each PAC’s sponsoring organization. Amended filings replace the originals (${fmtInt(m.n_superseded)} superseded rows); refunds are not netted here, so totals can run slightly above the campaign’s own summary.</p>
+    <p>Each PAC is tagged once, by keyword rules applied to its sponsoring organization and name, in a fixed priority order (pro-Israel, crypto, pharma, defense, tech, oil and gas, utilities, insurers, doctors, finance, and so on). Union PACs are tagged by the FEC’s own labor flag; leadership PACs and joint fundraisers by their FEC designation. PACs that match no rule fall back to the FEC’s organization type (corporate, trade association, membership) and ${(m.unclassified_share*100).toFixed(0)}% of dollars end up in those catch-all buckets. Every tag is visible next to the PAC’s name, so a wrong tag is a visible error, not a hidden one; the rules are in <code>scripts/receipts.py</code> on GitHub.</p>
+    <p>What this does not show: money that reaches a candidate through super PACs (their donors file separately and appear under "Outside money"), individual donations from executives of these industries, and contributions bundled through joint fundraising committees. A candidate with little PAC money is not necessarily independent of an industry, and one with a lot is not necessarily influenced by it; the page shows the checks, and the reader draws the conclusion.</p>`;
+  });
 }
 function candHead(c,side,pos){
   if(!c)return `<div class="cand-card ${pos}"><span class="face big mono oth">—</span><div><div class="nm">No nominee identified<small>No general-election spending names a candidate on this side</small></div></div></div>`;
@@ -596,7 +818,7 @@ function candOutside(c,r){
   <div class="fa"><div class="box for"><div class="v num">${fmt(ie.for)}</div><div class="l">spent FOR · ${fmtInt(ie.n_for)} items</div></div><div class="box against"><div class="v num">${fmt(ie.against)}</div><div class="l">spent AGAINST · ${fmtInt(ie.n_against)} items</div></div></div>
   <div class="kicker" style="margin:14px 0 8px">By week</div>${weeklyChart(weeks.map(w=>({w:w.w,a:w.S,b:w.O})),'ok','bad','For','Against')}
   <div class="kicker" style="margin:16px 0 8px">What it bought</div><div class="hbars">${medRows.map(x=>`<div class="hbar"><div class="n">${MEDIUM_LABEL[x.k]}</div><div class="t" style="display:grid;grid-template-rows:1fr 1fr;gap:1px;height:14px"><div style="background:var(--bg-3)"><i class="for" style="width:${x.S/mx*100}%;height:100%"></i></div><div style="background:var(--bg-3)"><i class="against" style="width:${x.O/mx*100}%;height:100%"></i></div></div><div class="v num" style="font-size:11px;line-height:1.1"><span style="color:var(--ok)">${fmt(x.S)}</span><br><span style="color:var(--bad)">${fmt(x.O)}</span></div></div>`).join('')||'<div style="color:var(--ink-3);font-size:13px">No spending.</div>'}</div>
-  <div class="kicker" style="margin:16px 0 8px">Who paid</div><div class="cm-list">${c.committees.slice(0,12).map(x=>{const cm=D.committees[x.id]||{};return `<div class="cm"><div class="n"><a href="${fecCmte(x.id)}" target="_blank" rel="noopener">${esc(cm.name||x.id)}</a> <span class="chip cls">${CLASS_LABEL[cm.class]||cm.class||''}</span></div><div class="a num">${x.S?`<span class="for">+${fmt(x.S)}</span>`:''}${x.S&&x.O?' / ':''}${x.O?`<span class="against">−${fmt(x.O)}</span>`:''}</div></div>`}).join('')||'<div style="color:var(--ink-3);font-size:13px">No groups reported spending on this candidate.</div>'}</div></div></div>`}
+  <div class="kicker" style="margin:16px 0 8px">Who paid</div><div class="cm-list">${c.committees.slice(0,12).map(x=>{const cm=D.committees[x.id]||{};const sp=EMP&&EMP.superpacs&&EMP.superpacs[x.id];return `<div class="cm" style="${sp?'grid-template-columns:1fr auto;':''}"><div class="n"><a href="${fecCmte(x.id)}" target="_blank" rel="noopener">${esc(cm.name||x.id)}</a> <span class="chip cls">${CLASS_LABEL[cm.class]||cm.class||''}</span>${sp&&sp.donors.length?`<div style="white-space:normal;font-size:12px;color:var(--ink-3);margin-top:2px">Funded by: ${sp.donors.slice(0,4).map(d=>`<b style="color:var(--ink-2)">${esc(d.type==='IND'?d.name.split(',').reverse().join(' ').trim().toLowerCase().replace(/\b\w/g,ch=>ch.toUpperCase()):coName({conn:'',name:d.name}))}</b>${d.type==='IND'&&d.employer?' ('+esc(empName(d.employer))+')':''} ${fmt(d.amount)}`).join(' · ')}${sp.donors.length>4?' · …':''}</div>`:''}</div><div class="a num">${x.S?`<span class="for">+${fmt(x.S)}</span>`:''}${x.S&&x.O?' / ':''}${x.O?`<span class="against">−${fmt(x.O)}</span>`:''}</div></div>`}).join('')||'<div style="color:var(--ink-3);font-size:13px">No groups reported spending on this candidate.</div>'}</div></div></div>`}
 function fcItem(f){
   const v=verdictClass(f.verdict);
   return `<div class="fc-item"><div class="top"><span class="verdict ${v}">${esc(f.verdict)}</span><span>${esc(f.outlet)}${f.date?' · '+esc(f.date):''}</span><span style="margin-left:auto">${f.for_or_against==='against'?'Attack ad':'Supporting ad'} · ${esc(f.targets)}</span></div>
@@ -660,6 +882,7 @@ function buildMethods(){
   <h3>How the ads are matched</h3><p>Every independent expenditure carries a purpose field written by the filer ("MEDIA PLACEMENT", "DIGITAL ADS", "DIRECT MAIL"). Those are grouped into TV and streaming, digital, mail, texts and calls, production and media buys using keyword rules; anything else is field work, polling, staff or unspecified. ${fmtInt(m.n_estimates)} of ${fmtInt(m.n_items)} items are flagged as estimates by the filer. Fact checks are matched to a race by the candidate the ad targets; the sponsor named is the one the outlet identified.</p>
   <h3>Which fact checks are included</h3><p>The 35 races with the most outside spending (13 Senate, 22 House) were searched for published checks of specific ads. An item is listed only if it comes from an established fact-checking organization, a wire service, a daily newspaper, a broadcast station, public radio or a nonprofit statehouse newsroom, and reaches a stated finding. Pieces from party-aligned outlets, editorials without a specific claim, and stories that only report one campaign's objection to the other's ad were left out. Verdict colors are assigned by keyword for scanning only: red for false or unsupported, amber for misleading, exaggerated or lacking context, green for true or mostly true.</p>
   <h3>What "verified" means here</h3><p>For every race, each side’s published total was re-added from the individual line items and compared to the cent (${c.race_total_match} of ${c.race_total_match+c.race_total_mismatch} matched). For every nominee, itemized sources were checked against total receipts (${c.cand_receipts_ok} of ${c.cand_receipts_ok+c.cand_receipts_flag} passed). Every row links to the filing image at the FEC so any figure can be traced to the document. Content of the ads themselves is not re-adjudicated; the fact-check ratings are the outlets’ own.</p>
+  <h3>PAC receipts</h3><p>The Receipts tab and each race’s “Where the PAC money comes from” panel use the FEC bulk file of committee-to-candidate contributions, tagged by industry; the tagging rules and their limits are described on that tab. For every nominee the itemized checks are compared with the campaign’s own summary: PAC money dated inside the summary period must fit within the receipts the summary does not attribute to individuals or parties.</p>
   <h3>Known limits</h3><ul>${m.itemized?`<li>PAC, party, self-funding and transfer lines come from the FEC all-candidates summary (${fmtInt(m.weball_candidates)} candidates); a candidate’s remaining receipts (refunds, offsets, interest) are shown as "other". The build flags any nominee whose lines fail to add up within 5%.</li>`:`<li>The candidate summary file separates individual and party money but lumps PAC contributions, self-funding, loans and transfers together as "other sources". The FEC candidate page linked on each profile itemizes them.</li>`}<li>Party coordinated spending is reported monthly and lags; it is complete only through ${esc(m.coord_through)}.</li>${m.n_races_total>m.n_races?`<li>${m.n_races} races have outside spending; the other ${m.n_races_total-m.n_races} listed under "All races" show only the top fundraiser of each party, who may be a primary candidate.</li>`:`<li>Races with no outside spending at all are not listed; there are ${m.n_races} races here out of 435 House and 35 Senate contests.</li>`}<li>Photos exist only for current members of Congress; other candidates are shown by initials.</li></ul>`;
   $('#global-checks').innerHTML=`<div class="check ${c.race_total_mismatch?'bad':'ok'}"><div class="ic">${c.race_total_mismatch?'!':'✓'}</div><div>Race totals re-added from line items<small>${c.race_total_match} of ${c.race_total_match+c.race_total_mismatch} party-race totals match the published rollup within $1</small></div></div>
   <div class="check ${c.cand_receipts_flag?'bad':'ok'}"><div class="ic">${c.cand_receipts_flag?'!':'✓'}</div><div>Candidate receipts arithmetic<small>${c.cand_receipts_ok} of ${c.cand_receipts_ok+c.cand_receipts_flag} nominees: individuals + party ≤ total receipts</small></div></div>
@@ -680,13 +903,17 @@ function route(){
   $('#nav').classList.remove('open');
   if(byRace[h]){buildRace(byRace[h]);$('#view-race').classList.add('active');document.title=byRace[h].label+' · Follow the Ads 2026';}
   else{
+    if(h==='races'){h='overview';setTimeout(()=>$('#racelist-title').scrollIntoView({behavior:prefersReduced?'auto':'smooth'}),50)}
+    if(h==='spenders'){h='receipts'}
+    if(h==='methods'){h='about';setTimeout(()=>{const a=$('#methods-anchor');if(a)a.scrollIntoView({behavior:prefersReduced?'auto':'smooth'})},80)}
     if(h==='senate'||h==='house'){state.chamber=h==='senate'?'S':'H';state.shown=40;renderFilters();renderTable();$('#racelist-title').textContent=(h==='senate'?'Senate':'House')+' races with outside spending';h='overview';setTimeout(()=>$('#racelist-title').scrollIntoView({behavior:prefersReduced?'auto':'smooth'}),50)}
     else if(h==='overview'){$('#racelist-title').textContent='All races with outside spending'}
+    if(h==='receipts'||h==='spenders'){if(!$('#cc-cand').options.length)buildReceipts();else if(window.__ccPreset){$('#cc-cand').value=window.__ccPreset;window.__ccPreset=null;$('#cc-cand').onchange()}}
     const v=$('#view-'+h)||$('#view-overview');v.classList.add('active');
-    const a=$(`nav.main a[href="#${location.hash.slice(1)||'overview'}"]`);if(a)a.setAttribute('aria-current','page');
+    const cur={senate:'races',house:'races',spenders:'receipts',methods:'about'}[location.hash.slice(1)]||location.hash.slice(1)||'overview';const a=$(`nav.main a[href="#${cur}"]`);if(a)a.setAttribute('aria-current','page');
     document.title='Follow the Ads 2026';
   }
-  if(byRace[h]||!['senate','house'].includes(location.hash.slice(1)))window.scrollTo({top:0,behavior:'auto'});
+  if(byRace[h]||!['senate','house','races','methods'].includes(location.hash.slice(1)))window.scrollTo({top:0,behavior:'auto'});
 }
 addEventListener('hashchange',route);
 $('#menu').onclick=()=>{const n=$('#nav');n.classList.toggle('open');$('#menu').setAttribute('aria-expanded',n.classList.contains('open'))};
