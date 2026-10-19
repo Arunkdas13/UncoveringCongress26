@@ -1,1 +1,66 @@
+name: Build and deploy
 
+on:
+  schedule:
+    - cron: "25 11 * * *"
+    - cron: "25 17 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow
+      - name: Fetch upstream data
+        run: bash scripts/fetch.sh
+      - name: Build site data
+        run: |
+          python scripts/build.py \
+            --upstream work/ftm \
+            --legislators work/legislators-current.json \
+            --weball work/weball26.zip \
+            --cn work/cn26.zip \
+            --factchecks data/factchecks.json \
+            --out docs
+          python scripts/receipts.py --pas2 work/pas226.zip --cm work/cm26.zip --races docs/data/races.json --out docs/data/receipts.json
+      - name: Individual donors by employer and super PAC funders (FEC API)
+        env:
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+        run: python scripts/employers.py --races docs/data/races.json --out docs/data/employers.json --cache docs/data/employers_cache.json --max-calls 900
+      - name: Commit refreshed data
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data docs/photos
+          git diff --cached --quiet || git commit -m "data: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
